@@ -19,6 +19,10 @@
                 <p>@s.IPv6</p>
                 <p>@s.Region!.ShortName</p>
                 <p>@s.Usage!.ShortName</p>
+                <div class="btn btn-info">
+                    <a asp-page="./Details" asp-route-id="@s.Id" asp-page-handler="get">
+                    See Details</a>
+                    </div>
             </div>
             <div class="card-footer">
                 

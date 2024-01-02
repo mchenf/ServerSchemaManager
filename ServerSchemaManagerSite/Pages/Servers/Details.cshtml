@@ -1,0 +1,9 @@
+﻿@page
+@model ServerDetailsModel
+@{
+    ViewData["Title"] = "Server Details";
+}
+
+<h3>@Model.Server!.HostName</h3>
+<p>@Model.Server!.IPv4</p>
+<p>@Model.Server!.Region!.ShortName</p>

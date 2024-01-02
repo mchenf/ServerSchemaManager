@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ServerSchemaManagerSite.Models;
 
-namespace ServerSchemaManagerSite.Pages
+namespace ServerSchemaManagerSite.Pages.Servers
 {
     public class ServersModel : PageModel
     {
-        public void OnGet([FromServices]SsmDbContext data)
+        public void OnGet([FromServices] SsmDbContext data)
         {
             Servers = data.SsmServers.Include(p => p.Usage)
                 .Include(p => p.Region);
