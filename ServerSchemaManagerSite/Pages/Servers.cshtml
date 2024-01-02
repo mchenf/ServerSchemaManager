@@ -1,0 +1,19 @@
+﻿@page
+@model ServersModel
+@{
+    ViewData["Title"] = "Servers";
+
+}
+
+
+@if (Model.Servers != null)
+{
+    @foreach (SsmServer s in Model.Servers)
+    {
+        <div>@s.HostName</div>
+    }
+} 
+else
+{
+    <h2>Nothing to display here...</h2>
+}
