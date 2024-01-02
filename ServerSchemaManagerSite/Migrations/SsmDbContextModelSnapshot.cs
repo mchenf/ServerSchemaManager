@@ -55,8 +55,13 @@ namespace ServerSchemaManagerSite.Migrations
                         .IsRequired()
                         .HasColumnType("nchar(16)");
 
-                    b.Property<int>("IPv4_Internal")
-                        .HasColumnType("int");
+                    b.Property<string>("IPv4")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(45)");
+
+                    b.Property<byte[]>("IPv4_Internal")
+                        .IsRequired()
+                        .HasColumnType("binary(4)");
 
                     b.Property<byte[]>("IPv6_Internal")
                         .IsRequired()

@@ -44,7 +44,8 @@ namespace ServerSchemaManagerSite.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     HostName = table.Column<string>(type: "nchar(16)", nullable: false),
-                    IPv4_Internal = table.Column<int>(type: "int", nullable: false),
+                    IPv4_Internal = table.Column<byte[]>(type: "binary(4)", nullable: false),
+                    IPv4 = table.Column<string>(type: "nvarchar(45)", nullable: false),
                     IPv6_Internal = table.Column<byte[]>(type: "binary(16)", nullable: false),
                     RegionId = table.Column<int>(type: "int", nullable: false),
                     UsageId = table.Column<int>(type: "int", nullable: false)
