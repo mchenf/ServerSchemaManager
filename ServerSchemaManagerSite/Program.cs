@@ -1,3 +1,5 @@
+using ServerSchemaManagerSite.Models;
+
 namespace ServerSchemaManagerSite
 {
     public class Program
@@ -9,6 +11,12 @@ namespace ServerSchemaManagerSite
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            string conn = builder.Configuration["ConnectionStrings:DataRepo"];
+            builder.AddSsmDbContext(conn);
+
+            
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -19,6 +27,7 @@ namespace ServerSchemaManagerSite
                 app.UseHsts();
             }
 
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -28,6 +37,7 @@ namespace ServerSchemaManagerSite
 
             app.MapRazorPages();
 
+            app.EnsureSeedData();
             app.Run();
         }
     }

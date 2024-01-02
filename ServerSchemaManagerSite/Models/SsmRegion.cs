@@ -7,9 +7,9 @@ namespace ServerSchemaManagerSite.Models
     {
         [Key]
         public int Id { get; set; }
-        [Column(TypeName = "Nvchar(64)")]
+        [Column(TypeName = "nvarchar(64)")]
         public string FullName { get; set; } = string.Empty;
-        [Column(TypeName = "Nvchar(4)")]
+        [Column(TypeName = "nchar(4)")]
         public string ShortName { get; set; } = string.Empty;
     }
 }
