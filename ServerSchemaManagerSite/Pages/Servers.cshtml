@@ -10,7 +10,21 @@
 {
     @foreach (SsmServer s in Model.Servers)
     {
-        <div>@s.HostName</div>
+        <div class="card" style="width:18rem;margin-bottom:2rem">
+            <div class="card-header">
+                <h2 class="card-title">@s.HostName</h2>
+            </div>
+            <div class="card-body">
+                <p>@s.IPv4_Internal</p>
+                <p>@s.IPv6_Internal</p>
+                <p>@s.Region!.ShortName</p>
+                <p>@s.Usage!.ShortName</p>
+            </div>
+            <div class="card-footer">
+                
+                <p>Foss Analytical A/S</p>
+            </div>
+        </div>
     }
 } 
 else
